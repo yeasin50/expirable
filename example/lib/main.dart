@@ -1,11 +1,11 @@
-import 'package:expirable_widget/expirable_widget.dart';
+import 'package:expirable/expirable.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    ExpirableWidget(
-      skipAssert: true,
-      expireDate: DateTime.now().subtract(const Duration(seconds: 5)), //! don't use DateTime.now() directly
+    Expirable(
+      skipAssert: false,
+      expireDate: DateTime.now().add(const Duration(seconds: 5)), //! don't use DateTime.now() directly
       child: const MainApp(),
     ),
   );

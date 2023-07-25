@@ -1,7 +1,7 @@
-name: expirable_widget
+name: expirable
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: none
 
 environment:
   sdk: '>=3.0.3 <4.0.0'

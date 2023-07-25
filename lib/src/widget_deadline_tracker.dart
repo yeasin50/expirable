@@ -1,8 +1,8 @@
-part of expirable_widget;
+part of expirable;
 
-class ExpirableWidget extends StatelessWidget {
+class Expirable extends StatelessWidget {
   /// Creates a widget that will expire on the given date.
-  const ExpirableWidget({
+  const Expirable({
     super.key,
     required this.expireDate,
     required this.child,
@@ -21,7 +21,7 @@ class ExpirableWidget extends StatelessWidget {
   /// if not provided, the default message will be displayed
   final String? message;
 
-  /// if true, the [child] will be replaced with [DeadView()]
+  /// if true, the [child] will be replaced with [DeadView()] on debug mode
   final bool skipAssert;
 
   @override
@@ -29,7 +29,7 @@ class ExpirableWidget extends StatelessWidget {
     bool isDead = DateTime.now().isAfter(expireDate);
 
     assert(() {
-      if (skipAssert) return true;
+      if (skipAssert && kDebugMode) return true;
       if (isDead) {
         throw FlutterError.fromParts([
           ErrorSummary('ExpirableWidget is dead'),
