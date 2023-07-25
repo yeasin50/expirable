@@ -7,6 +7,7 @@ class ExpirableWidget extends StatelessWidget {
     required this.expireDate,
     required this.child,
     this.message,
+    this.skipAssert = false,
   });
 
   /// The date on which the [child] will be replaced with [DeadView()]
@@ -20,11 +21,15 @@ class ExpirableWidget extends StatelessWidget {
   /// if not provided, the default message will be displayed
   final String? message;
 
+  /// if true, the [child] will be replaced with [DeadView()]
+  final bool skipAssert;
+
   @override
   Widget build(BuildContext context) {
     bool isDead = DateTime.now().isAfter(expireDate);
 
     assert(() {
+      if (skipAssert) return true;
       if (isDead) {
         throw FlutterError.fromParts([
           ErrorSummary('ExpirableWidget is dead'),

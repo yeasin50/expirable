@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     ExpirableWidget(
-      expireDate: DateTime.now().subtract(const Duration(seconds: 5)),//! don't use DateTime.now() directly
+      skipAssert: true,
+      expireDate: DateTime.now().subtract(const Duration(seconds: 5)), //! don't use DateTime.now() directly
       child: const MainApp(),
     ),
   );
