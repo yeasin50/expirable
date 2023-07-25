@@ -1,4 +1,5 @@
-library expirable_widget;
+library expirable;
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 part 'src/widget_deadline_tracker.dart';

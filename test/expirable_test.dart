@@ -1,4 +1,4 @@
-import 'package:expirable_widget/expirable_widget.dart';
+import 'package:expirable/expirable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -7,7 +7,7 @@ void main() {
     group('Failure cases', () {
       testWidgets('throws an error if the expireDate is before the current date', (tester) async {
         await tester.pumpWidget(
-          ExpirableWidget(
+          Expirable(
             expireDate: DateTime.now().subtract(const Duration(days: 1)),
             child: Container(),
           ),
@@ -18,7 +18,7 @@ void main() {
     group('Success cases', () {
       testWidgets('does not throw an error if the expireDate is after the current date', (tester) async {
         await tester.pumpWidget(
-          ExpirableWidget(
+          Expirable(
             expireDate: DateTime.now().add(const Duration(days: 1)),
             child: Container(),
           ),

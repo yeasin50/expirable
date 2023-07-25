@@ -1,6 +1,6 @@
-# expirable_widget
+# expirable
 
-`expirable_widget` was created to replace a widget after specific [DateTime][dateTime].
+`expirable` was created to replace a widget after specific [DateTime][dateTime].
 
 One of my mediator wanted this, so made as package 😅.
 
@@ -14,8 +14,8 @@ add package on your `pubspec.yaml`
 
 ```yaml
 dependencies:
-  expirable_widget:
-    git: https://github.com/yeasin50/expirable_widget.git
+  expirable:
+    git: https://github.com/yeasin50/expirable.git
     ref: master
 
   flutter:
@@ -27,13 +27,13 @@ dependencies:
 Import the package
 
 ```dart
-import 'package:expirable_widget/expirable_widget.dart';
+import 'package:expirable/expirable.dart';
 ```
 
 and use like
 
 ```dart
-ExpirableWidget(
+Expirable(
       skipAssert: true, // use for preview on debug mode
       expireDate: DateTime(2023,10,10),
       child: const MainApp(),

@@ -1,4 +1,4 @@
-part of expirable_widget;
+part of expirable;
 
 class DeadView extends StatelessWidget {
   const DeadView({super.key, this.message});
