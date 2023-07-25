@@ -1,26 +1,48 @@
-`expirable_widget` was created to lock a widget after a [DateTime][dateTime].  
- 
+# expirable_widget
+
+`expirable_widget` was created to replace a widget after specific [DateTime][dateTime].
+
+One of my mediator wanted this, so made as package 😅.
 
 ## Features
 
-
+- disable widget after a specific `DateTime`
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+add package on your `pubspec.yaml`
+
+```yaml
+dependencies:
+  expirable_widget:
+    git: https://github.com/yeasin50/expirable_widget.git
+    ref: master
+
+  flutter:
+    sdk: flutter
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package
 
 ```dart
-const like = 'sample';
+import 'package:expirable_widget/expirable_widget.dart';
 ```
 
-## Additional information
+and use like
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+ExpirableWidget(
+      skipAssert: true, // use for preview on debug mode
+      expireDate: DateTime(2023,10,10),
+      child: const MainApp(),
+    ),
+```
+
+> Don't use `DateTime.now()` directly, this widget isn't made for this
+
+You can check the [example][example] directory.
+
+[dateTime]: https://api.dart.dev/stable/3.0.6/dart-core/DateTime-class.html
+[example]: /example
